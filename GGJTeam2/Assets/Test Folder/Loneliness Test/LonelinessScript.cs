@@ -50,7 +50,7 @@ public class LonelinessScript : MonoBehaviour
 
     public void OnTriggerStay2D(Collider2D collision)
     {
-        if(collision.gameObject == home)
+        if(collision.gameObject.tag == "home")
         {
             lonely = false;
         }
@@ -58,7 +58,7 @@ public class LonelinessScript : MonoBehaviour
 
     public void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject == home)
+        if (collision.gameObject.tag == "home")
         {
             lonely = true;
         }
