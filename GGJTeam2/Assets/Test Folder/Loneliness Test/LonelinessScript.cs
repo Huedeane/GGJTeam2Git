@@ -7,11 +7,13 @@ public class LonelinessScript : MonoBehaviour
 {
     public GameObject home;
 
-    public float distanceFromHome;
+    //public float distanceFromHome;
 
     public bool lonely;
 
     public Text lonelyText;
+
+   
 
     // Start is called before the first frame update
     void Start()
@@ -23,7 +25,7 @@ public class LonelinessScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        GetPlayerDistance();
+        //GetPlayerDistance();
     }
 
     void FixedUpdate()
@@ -43,13 +45,22 @@ public class LonelinessScript : MonoBehaviour
 
     void GetPlayerDistance()
     {
-        distanceFromHome = Vector2.Distance(this.transform.position,home.transform.position);
+        
+    }
 
-        if (distanceFromHome > 6)
+    public void OnTriggerStay2D(Collider2D collision)
+    {
+        if(collision.gameObject == home)
+        {
+            lonely = false;
+        }
+    }
+
+    public void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject == home)
         {
             lonely = true;
         }
-        else
-            lonely = false;
     }
 }
