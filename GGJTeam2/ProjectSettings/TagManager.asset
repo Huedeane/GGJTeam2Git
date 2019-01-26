@@ -42,3 +42,6 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: camp
+    uniqueID: 1101667931
+    locked: 0
