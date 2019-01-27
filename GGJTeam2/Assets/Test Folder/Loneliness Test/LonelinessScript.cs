@@ -1,11 +1,12 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class LonelinessScript : MonoBehaviour
 {
-    public GameObject home;
+    //public GameObject home;
 
     //public float distanceFromHome;
 
@@ -13,19 +14,28 @@ public class LonelinessScript : MonoBehaviour
 
     public Text lonelyText;
 
-   
+    public int lonelinessAmt;
+
+    int currentLoneliness = 0;
 
     // Start is called before the first frame update
     void Start()
     {
-        home = FindObjectOfType<Home>().gameObject;
+        lonelinessAmt = currentLoneliness;
+
+        //home = FindObjectOfType<Home>().gameObject;
         lonelyText = GameObject.Find("LonelyText").GetComponent<Text>();
+
+        InvokeRepeating("CheckLoneliness", 10f, 10f);
     }
 
     // Update is called once per frame
     void Update()
     {
-        //GetPlayerDistance();
+       
+            
+
+        
     }
 
     void FixedUpdate()
@@ -34,6 +44,7 @@ public class LonelinessScript : MonoBehaviour
         {
             lonelyText.text = "Lonely";
             lonelyText.color = Color.blue;
+            InvokeRepeating("IncreaseLoneliness", 10f, 10f);
         }
         else
         {
@@ -43,9 +54,13 @@ public class LonelinessScript : MonoBehaviour
 
     }
 
-    void GetPlayerDistance()
+    private void CheckLoneliness()
     {
-        
+        if (lonely && lonelinessAmt < 100)
+            lonelinessAmt += 1;
+
+        else if (!lonely && lonelinessAmt > 0)
+            lonelinessAmt -= 1;
     }
 
     public void OnTriggerStay2D(Collider2D collision)
