@@ -3,7 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
+using UnityEditor.Events;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 /* Class Explanation
@@ -21,6 +24,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private bool m_ConversationInProgress;
     [SerializeField] private List<Dialogue> m_DialogueList;
     [SerializeField] private Dialogue m_DialogueFocus;
+    [SerializeField] private EventSystem m_eventSystem;
     #endregion
 
     #region Getter & Setter
@@ -252,6 +256,9 @@ public class DialogueManager : MonoBehaviour
 
                 Button button = newButton.GetComponent<Button>();
 
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+
                 switch (dialogue.DialogueConnectionType)
                 {
                     case E_DialogueConnectionType.Chat:
@@ -278,9 +285,18 @@ public class DialogueManager : MonoBehaviour
                         break;
                         //Trigger end conversation and execute any special dialogue action
                     case E_DialogueConnectionType.None:
-                        Debug.Log("Test3");
+                        Debug.Log("Test1");
+                        
                         button.onClick.AddListener(
-                            () => DoSomething());
+                            delegate
+                            {
+                                DoSomething();
+                                m_DialogueFocus = dialogue.DialogueResponse;
+                                ExecuteSpecialDialogueAction(dialogue);
+
+                                EventManager.TriggerEvent("DialoguePerformed", dialogue);
+                            });
+                        Debug.Log("Test3");
                         break;
                     default:
                         Debug.Log("Test2");
