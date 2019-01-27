@@ -14,9 +14,9 @@ public class LonelinessScript : MonoBehaviour
 
     public Text lonelyText;
 
-    public int lonelinessAmt;
+    public float lonelinessAmt;
 
-    int currentLoneliness = 0;
+    float currentLoneliness = 100f;
 
     // Start is called before the first frame update
     void Start()
@@ -40,7 +40,7 @@ public class LonelinessScript : MonoBehaviour
     {
         if (lonely)
         {
-            lonelyText.text = "Lonely";
+            lonelyText.text = "Lonely " + lonelinessAmt;
             lonelyText.color = Color.blue;
             
         }
@@ -54,11 +54,11 @@ public class LonelinessScript : MonoBehaviour
 
     private void CheckLoneliness()
     {
-        if (lonely && lonelinessAmt < 100)
-            lonelinessAmt += 1;
-
-        else if (!lonely && lonelinessAmt > 0)
+        if (lonely && lonelinessAmt > 0)
             lonelinessAmt -= 1;
+
+        else if (!lonely && lonelinessAmt < 100)
+            lonelinessAmt += 1;
     }
 
     public void OnTriggerStay2D(Collider2D collision)
