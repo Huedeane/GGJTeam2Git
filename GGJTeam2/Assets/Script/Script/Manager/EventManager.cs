@@ -7,9 +7,10 @@ using UnityEngine.Events;
 public class EventManager : MonoBehaviour
 {
 
-    private static List<GameObject> m_eventObjectList;
-    private static GameObject m_eventObject;
+    private static List<ScriptableObject> m_eventObjectList;
+    private static ScriptableObject m_eventObject;
     private static int m_eventInt;
+    private static Item m_eventItem;
     private Dictionary<string, UnityEvent> eventDictionary;
     private static EventManager eventManager;
 
@@ -39,7 +40,7 @@ public class EventManager : MonoBehaviour
         }
     }
 
-    public static List<GameObject> eventObjectList
+    public static List<ScriptableObject> eventObjectList
     {
         get
         {
@@ -52,7 +53,7 @@ public class EventManager : MonoBehaviour
         }
     }
 
-    public static GameObject eventObject
+    public static ScriptableObject eventObject
     {
         get
         {
@@ -66,6 +67,7 @@ public class EventManager : MonoBehaviour
     }
 
     public static int EventInt { get => m_eventInt; set => m_eventInt = value; }
+    public static Item EventItem { get => m_eventItem; set => m_eventItem = value; }
 
     private void Awake()
     {
@@ -80,16 +82,16 @@ public class EventManager : MonoBehaviour
         }
         if (eventObjectList == null)
         {
-            eventObjectList = new List<GameObject>();
+            eventObjectList = new List<ScriptableObject>();
         }
     }
 
-    private static void SetEventObjectList(GameObject gameObject)
+    private static void SetEventObjectList(ScriptableObject scriptableObject)
     {
         eventObjectList.Clear();
-        eventObjectList.Add(gameObject);
+        eventObjectList.Add(scriptableObject);
     }
-    private static void SetEventObjectList(List<GameObject> setList)
+    private static void SetEventObjectList(List<ScriptableObject> setList)
     {
         eventObjectList.Clear();
         eventObjectList = setList;
@@ -143,10 +145,9 @@ public class EventManager : MonoBehaviour
         }
     }
 
-    public static void TriggerEvent(string eventName, GameObject gameObject)
+    public static void TriggerEvent(string eventName, Item eventItem)
     {
-
-        SetEventObjectList(Instantiate(gameObject));
+        m_eventItem = eventItem;
         UnityEvent thisEvent = null;
         if (Instance.eventDictionary.TryGetValue(eventName, out thisEvent))
         {
@@ -156,12 +157,25 @@ public class EventManager : MonoBehaviour
         }
     }
 
-    public static void TriggerEvent(string eventName, List<GameObject> gameObjectsList)
+    public static void TriggerEvent(string eventName, ScriptableObject scriptableObjects)
     {
-        List<GameObject> newList = new List<GameObject>();
-        foreach (GameObject gameObject in gameObjectsList)
+
+        SetEventObjectList(Instantiate(scriptableObjects));
+        UnityEvent thisEvent = null;
+        if (Instance.eventDictionary.TryGetValue(eventName, out thisEvent))
         {
-            newList.Add(gameObject);
+            Debug.Log("Start Event: " + eventName);
+            thisEvent.Invoke();
+            Debug.Log("End Event: " + eventName);
+        }
+    }
+
+    public static void TriggerEvent(string eventName, List<ScriptableObject> scriptableObjectsList)
+    {
+        List<ScriptableObject> newList = new List<ScriptableObject>();
+        foreach (ScriptableObject scriptableObjects in scriptableObjectsList)
+        {
+            newList.Add(Instantiate(scriptableObjects));
         }
 
         SetEventObjectList(newList);

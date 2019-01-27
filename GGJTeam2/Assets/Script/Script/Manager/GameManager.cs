@@ -3,17 +3,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; set; }
+    public bool uiAccess;
     public int mapSpawnPoint;
-    public bool mapSpawn;
+    public TextMeshProUGUI interactionText;
 
     private void Awake()
     {
         MakeSingleton();
-        mapSpawn = false;
     }
 
     private void MakeSingleton()

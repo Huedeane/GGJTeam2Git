@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8634e04f58e91824d96cd2afeac57c16, type: 3}
+  m_Name: New NPC
+  m_EditorClassIdentifier: 
+  m_NPCId: 1
+  m_NPCName: Human
+  m_NPCPrefaceText: Ow my leg
+  m_DialogueList:
+  - {fileID: 11400000, guid: fc4c10ac88ba3b3468a831d7f804fa35, type: 2}
+  - {fileID: 11400000, guid: 34523dcca6cf43a45ac4c09516978552, type: 2}
+  m_IsInteractable: 1
+  m_InteractionText: Press space to talk to human

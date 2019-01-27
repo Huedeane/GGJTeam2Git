@@ -22,8 +22,10 @@ public class SceneTransition : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        Debug.Log("Test");
         if (collision.gameObject.tag == "Player")
         {
+            Debug.Log("Test2");
             GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().CanMove = false;
             StartCoroutine(Transition());
         }
