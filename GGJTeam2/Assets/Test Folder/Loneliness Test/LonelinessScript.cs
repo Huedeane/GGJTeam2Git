@@ -34,8 +34,6 @@ public class LonelinessScript : MonoBehaviour
     {
        
             
-
-        
     }
 
     void FixedUpdate()
@@ -44,7 +42,7 @@ public class LonelinessScript : MonoBehaviour
         {
             lonelyText.text = "Lonely";
             lonelyText.color = Color.blue;
-            InvokeRepeating("IncreaseLoneliness", 10f, 10f);
+            
         }
         else
         {
