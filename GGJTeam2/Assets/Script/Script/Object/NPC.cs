@@ -123,7 +123,7 @@ public class NPC : ScriptableObject, IInteractableObject
             }
         }
     }
-
+    /*
     //IInteractableObject
     public IEnumerator ExecuteInteraction()
     {
@@ -131,9 +131,6 @@ public class NPC : ScriptableObject, IInteractableObject
         {
             GameManager.Instance.interactionText.gameObject.SetActive(false);
             GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().CanMove = false;
-            /* - NPC is set to not be interactable
-             * - Freezes the user camera and makes cursor invisible
-             */
             m_IsInteractable = false;
 
             // Set the ui access to false and starts conversation
@@ -155,6 +152,7 @@ public class NPC : ScriptableObject, IInteractableObject
         }       
         yield return null;
     }
+    */
 
     public bool Equals(NPC obj)
     {
@@ -164,6 +162,11 @@ public class NPC : ScriptableObject, IInteractableObject
     public override int GetHashCode()
     {
         return base.GetHashCode() * m_NPCId;
+    }
+
+    public IEnumerator ExecuteInteraction()
+    {
+        throw new NotImplementedException();
     }
 }
 

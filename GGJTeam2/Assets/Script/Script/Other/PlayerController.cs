@@ -85,7 +85,7 @@ public class PlayerController : MonoBehaviour
             m_PlayerRB.velocity = new Vector2(m_XAxis * m_PlayerSpeed, m_YAxis * m_PlayerSpeed);
         }
     }
-
+    
     private void OnTriggerEnter2D(Collider2D collision)
     {
         GameObject objectInRange = collision.transform.gameObject;
@@ -131,4 +131,5 @@ public class PlayerController : MonoBehaviour
     {
         GameManager.Instance.interactionText.SetText("");
     }
+
 }

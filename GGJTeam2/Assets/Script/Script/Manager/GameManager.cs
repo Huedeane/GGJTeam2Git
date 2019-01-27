@@ -42,7 +42,11 @@ public class GameManager : MonoBehaviour
     IEnumerator SceneChange() {
         yield return new WaitForEndOfFrame();
         yield return new WaitForEndOfFrame();
+        yield return new WaitForEndOfFrame();
+        yield return new WaitForEndOfFrame();
+        Debug.Log(SceneManager.GetActiveScene().name);
         GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().transform.position = GetSpawnPoint(EventManager.EventInt);
+        interactionText = GameObject.FindGameObjectWithTag("Interaction").GetComponent<TextMeshProUGUI>();
     }
 
     public Vector2 GetSpawnPoint(int SpawnConnectionID)

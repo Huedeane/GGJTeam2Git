@@ -11,10 +11,6 @@ GameObject:
   - component: {fileID: 842730012444307871}
   - component: {fileID: 842730012444307868}
   - component: {fileID: 842730012444307869}
-  - component: {fileID: 842730012444307866}
-  - component: {fileID: 842730012444307867}
-  - component: {fileID: 842730012444307864}
-  - component: {fileID: 842730012444307865}
   - component: {fileID: 842730012444307870}
   m_Layer: 0
   m_Name: Singleton
@@ -64,78 +60,6 @@ MonoBehaviour:
   uiAccess: 1
   mapSpawnPoint: 0
   interactionText: {fileID: 0}
---- !u!114 &842730012444307866
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 842730012444307858}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: faf0fd800adcba748893f5e915462584, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_DialogueButtonPrefab: {fileID: 1569834345447873655, guid: db88cbe8be6e79c4baa090eb1d4f6cac,
-    type: 3}
-  m_DialogueUI: {fileID: 0}
-  m_DialogueChatList: {fileID: 0}
-  m_DialogueResponse: {fileID: 0}
-  m_CurrentNPCFocus: {fileID: 0}
-  m_ConversationInProgress: 0
-  m_DialogueList: []
-  m_DialogueFocus: {fileID: 0}
-  m_eventSystem: {fileID: 0}
---- !u!114 &842730012444307867
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 842730012444307858}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 092790a0e832d254d8840cfd8b66dc81, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_ConditionTrackerDictionary:
-    m_keys: []
-    m_values: 
---- !u!114 &842730012444307864
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 842730012444307858}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92b176d7c2bda994885b37695256aa5e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_UI_PopUpInfo: {fileID: 0}
-  m_InfoContext: {fileID: 0}
-  m_InfoText: {fileID: 0}
-  m_IsInfoUIActive: 0
-  m_InfoQueueList: []
---- !u!114 &842730012444307865
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 842730012444307858}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c1428ec4d5d70c4b85176062faca941, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_QuestUI: {fileID: 0}
-  m_QuestListUI: {fileID: 0}
-  m_ButtonPrefab: {fileID: 0}
-  m_QuestDictionary:
-    m_keys: []
-    m_values: 
 --- !u!114 &842730012444307870
 MonoBehaviour:
   m_ObjectHideFlags: 0

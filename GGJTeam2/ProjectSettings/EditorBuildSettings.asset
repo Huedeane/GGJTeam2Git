@@ -5,8 +5,8 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
-    path: Assets/Scenes/TestScenes/SampleScene.unity
+  - enabled: 0
+    path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
     path: Assets/Test Folder/Movement Test/Test.unity
@@ -14,4 +14,19 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Test Folder/Movement Test/Maybe.unity
     guid: 2823d29ec6e25b147b8921df97e8e8c6
+  - enabled: 1
+    path: Assets/Scenes/Forest Bottom.unity
+    guid: f12f3a9765e15764386359e13f2ba48c
+  - enabled: 1
+    path: Assets/Scenes/Forest Middle.unity
+    guid: 2921ea68137d42243ac7fd2dc6036706
+  - enabled: 1
+    path: Assets/Scenes/Forest Mountain.unity
+    guid: be13f04ac2c76cc498b55c0dfa53ac89
+  - enabled: 1
+    path: Assets/Scenes/Forest Top.unity
+    guid: b46f2553112460b43a9491227d8cdf6e
+  - enabled: 1
+    path: Assets/Scenes/Shore.unity
+    guid: e4196b623f6b1b44eb574e2984390032
   m_configObjects: {}

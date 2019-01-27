@@ -15,7 +15,7 @@ using UnityEditor;
 
 
 //ConditionManager
-[CustomPropertyDrawer(typeof(ConditionBoolDictionary))]
+//[CustomPropertyDrawer(typeof(ConditionBoolDictionary))]
 
 public class AnySerializableDictionaryPropertyDrawer : SerializableDictionaryPropertyDrawer {}
 
