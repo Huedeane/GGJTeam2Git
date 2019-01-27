@@ -7,14 +7,14 @@ public class PlayerController : MonoBehaviour
 {
 
     #region Fields
-    [SerializeField]
-    private float m_MoveSpeed;
-    private Vector2 m_LastMovement;
-    private bool m_CanMove;
-    private bool m_IsMoving;
-    private Animator m_Anima;
-    private Rigidbody2D m_Rb;
-    private static bool m_PlayerExists;
+
+    [SerializeField] private float m_MoveSpeed;
+    [SerializeField] private Vector2 m_LastMovement;
+    [SerializeField] private bool m_CanMove;
+    [SerializeField] private bool m_IsMoving;
+    [SerializeField] private Animator m_Anima;
+    [SerializeField] private Rigidbody2D m_Rb;
+    [SerializeField] private static bool m_PlayerExists;
     #endregion
 
     #region Properties
@@ -102,25 +102,7 @@ public class PlayerController : MonoBehaviour
             m_PlayerExists = value;
         }
     }
-    public static PlayerController Instance { get; set; }
     #endregion
-
-    private void Awake()
-    {
-        MakeSingleton();
-    }
-    private void MakeSingleton()
-    {
-        if (Instance != null)
-        {
-            Destroy(gameObject);
-        }
-        else
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-    }
 
     // Use this for initialization
     void Start()
@@ -136,6 +118,10 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Space)) {
+            this.transform.position = new Vector2(1, 1);
+        }
+
         if (Rb.velocity.magnitude > 0)
         {
             IsMoving = true;

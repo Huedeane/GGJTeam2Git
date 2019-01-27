@@ -9,6 +9,7 @@ public class EventManager : MonoBehaviour
 
     private static List<GameObject> m_eventObjectList;
     private static GameObject m_eventObject;
+    private static int m_eventInt;
     private Dictionary<string, UnityEvent> eventDictionary;
     private static EventManager eventManager;
 
@@ -63,6 +64,8 @@ public class EventManager : MonoBehaviour
             m_eventObject = value;
         }
     }
+
+    public static int EventInt { get => m_eventInt; set => m_eventInt = value; }
 
     private void Awake()
     {
@@ -119,6 +122,18 @@ public class EventManager : MonoBehaviour
 
     public static void TriggerEvent(string eventName)
     {
+        UnityEvent thisEvent = null;
+        if (Instance.eventDictionary.TryGetValue(eventName, out thisEvent))
+        {
+            Debug.Log("Start Event: " + eventName);
+            thisEvent.Invoke();
+            Debug.Log("End Event: " + eventName);
+        }
+    }
+
+    public static void TriggerEvent(string eventName, int eventInt)
+    {
+        m_eventInt = eventInt;
         UnityEvent thisEvent = null;
         if (Instance.eventDictionary.TryGetValue(eventName, out thisEvent))
         {
