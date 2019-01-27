@@ -7,6 +7,8 @@ TagManager:
   - home
   - Transition
   - SpawnPoint
+  - UI
+  - EventSystem
   layers:
   - Default
   - TransparentFX

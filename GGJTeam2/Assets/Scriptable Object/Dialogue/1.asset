@@ -21,7 +21,7 @@ MonoBehaviour:
   m_DialogueText: Woof
   m_DialogueConnectionType: 2
   m_DialogueChatList: []
-  m_DialogueResponse: {fileID: 0}
+  m_DialogueResponse: {fileID: 11400000}
   m_DialogueSpecialAction: 0
   m_AddQuest: {fileID: 0}
   m_SetQuestComplete: {fileID: 0}
