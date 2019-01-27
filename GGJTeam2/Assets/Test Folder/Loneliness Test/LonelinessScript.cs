@@ -7,7 +7,12 @@ public class LonelinessScript : MonoBehaviour
 {
     public GameObject home;
 
-    //public float distanceFromHome;
+    //private float distanceFromHome;
+
+    public readonly float MAX_HEALTH = 10000f;
+    public readonly float MIN_H = 0;
+
+    public float health;
 
     public bool lonely;
 
@@ -20,6 +25,7 @@ public class LonelinessScript : MonoBehaviour
     {
         home = FindObjectOfType<Home>().gameObject;
         lonelyText = GameObject.Find("LonelyText").GetComponent<Text>();
+        health = MAX_HEALTH;
     }
 
     // Update is called once per frame
@@ -32,14 +38,32 @@ public class LonelinessScript : MonoBehaviour
     {
         if (lonely)
         {
-            lonelyText.text = "Lonely";
+            lonelyText.text = "Lonely " + health;            
             lonelyText.color = Color.blue;
+            health -= 1f;
+            if (health == MIN_H - 1f)
+            {
+                health ++;
+            }
+            if (health <= 0 ){
+                Debug.Log("You are dead!");
+            }
+            
         }
         else
         {
-            lonelyText.text = "Happy";
+            lonelyText.text = "Happy " + health;
             lonelyText.color = Color.green;
+            health++;
+            if (health > MAX_HEALTH)
+            {
+                health -= 1f;
+            }
+            
+
+            
         }
+        
 
     }
 
