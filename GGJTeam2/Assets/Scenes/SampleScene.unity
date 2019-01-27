@@ -272,7 +272,7 @@ Camera:
   far clip plane: 5000
   field of view: 40
   orthographic: 1
-  orthographic size: 10
+  orthographic size: 5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -296,7 +296,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.164, y: -0.63, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 866969404}
@@ -575,6 +575,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_MoveSpeed: 5
+  m_LastMovement: {x: 0, y: 0}
+  m_CanMove: 0
+  m_IsMoving: 0
+  m_Anima: {fileID: 0}
+  m_Rb: {fileID: 0}
 --- !u!212 &1110691714
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -612,7 +617,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300010, guid: fa4f02b4a0fd570449944ae251806fcb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -631,8 +636,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1110691712}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.03, y: -0.63, z: 0}
-  m_LocalScale: {x: 6.313, y: 4.2507, z: 1}
+  m_LocalPosition: {x: 0.164, y: -0.63, z: 0}
+  m_LocalScale: {x: 0.52157414, y: 0.4014616, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -673,9 +678,9 @@ BoxCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
-    border: {x: 0.049999997, y: 0.049999997, z: 0.049999997, w: 0.049999997}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.16, y: 0.16}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0}
+    oldSize: {x: 1.94, y: 1.36}
     newSize: {x: 0.16, y: 0.16}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -696,9 +701,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bdc302e5e5c47043b7e63f29c87ae71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  home: {fileID: 0}
   lonely: 0
   lonelyText: {fileID: 0}
+  lonelinessAmt: 0
 --- !u!1001 &1327560032
 PrefabInstance:
   m_ObjectHideFlags: 0
